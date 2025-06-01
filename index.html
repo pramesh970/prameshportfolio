@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pramesh Rai - Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-gray-800 min-h-screen" data-theme="light">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function Header() {
+      const [theme, setTheme] = React.useState('light');
+
+      const toggleTheme = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        document.body.setAttribute('data-theme', newTheme);
+      };
+
+      return (
+        <header className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 shadow-lg">
+          <div className="container mx-auto flex justify-between items-center fade-in">
+            <div className="text-center flex-1">
+              <h1 className="text-5xl font-extrabold tracking-tight">Pramesh Rai</h1>
+              <p className="text-xl mt-3 font-medium">Networking | Computer Network | Student</p>
+              <p className="text-lg mt-2 opacity-90">Kathmandu, Bagmati, Nepal</p>
+              <a
+                href="https://www.linkedin.com/in/pramesh-rai-4ba50023a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-6 px-8 py-3 bg-white text-indigo-600 rounded-full hover:bg-indigo-50 hover:text-indigo-700 transition-all duration-300 font-medium"
+              >
+                <i className="fab fa-linkedin mr-2"></i> LinkedIn Profile
+              </a>
+            </div>
+            <button
+              onClick={toggleTheme}
+              className="p-3 bg-white text-indigo-600 rounded-full hover:bg-indigo-50 transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              <i className={theme === 'light' ? 'fas fa-moon' : 'fas fa-sun'}></i>
+            </button>
+          </div>
+        </header>
+      );
+    }
+
+    function About() {
+      return (
+        <section className="py-12">
+          <div className="container mx-auto px-4 fade-in">
+            <h2 className="text-3xl font-bold section-header">About Me</h2>
+            <div className="card bg-white p-6 rounded-xl shadow-md">
+              <p className="text-lg leading-relaxed">
+                An enthusiastic and tech-savvy individual passionate about exploring and leveraging innovative technologies to solve real-world problems. With a strong curiosity for learning and a commitment to continuous improvement, I am eager to deepen my expertise and contribute to technology-driven projects. My goal is to develop a career that combines creativity, technical skills, and collaboration to deliver impactful results.
+              </p>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Experience() {
+      return (
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4 fade-in">
+            <h2 className="text-3xl font-bold section-header">Experience</h2>
+            <div className="card bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-indigo-600">Customer Service Representative</h3>
+              <p className="text-lg text-gray-600 mt-1">Kalash Services Pvt. Ltd. | Lalitpur District, Nepal | Full-time</p>
+              <p className="text-base text-gray-500 mt-1">Jan 2025 - Present | 5 mos | On-site</p>
+              <ul className="text-base mt-3 list-disc pl-5 space-y-2">
+                <li>Providing excellent customer service and maintaining phone etiquette.</li>
+                <li>Resolving customer issues efficiently.</li>
+                <li>Building strong customer relations as a skilled multi-tasker.</li>
+              </ul>
+            </div>
+            <div className="card bg-white p-6 rounded-xl shadow-md mt-6">
+              <h3 className="text-xl font-bold text-indigo-600">Information Technology Intern</h3>
+              <p className="text-lg text-gray-600 mt-1">Mid-Valley International College - MVIC | Kathmandu, Bagmati, Nepal | Internship</p>
+              <p className="text-base text-gray-500 mt-1">Jul 2023 - Dec 2024 | 1 yr 6 mos | On-site</p>
+              <ul className="text-base mt-3 list-disc pl-5 space-y-2">
+                <li>Managing IT operations and providing technical support.</li>
+                <li>Enhancing computer literacy and networking skills.</li>
+                <li>Applying problem-solving techniques in operations management.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Education() {
+      return (
+        <section className="py-12">
+          <div className="container mx-auto px-4 fade-in">
+            <h2 className="text-3xl font-bold section-header">Education</h2>
+            <div className="card bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-indigo-600">HELP University</h3>
+              <p className="text-lg text-gray-600 mt-1">Bachelor of Information Technology (Hons), Information Technology</p>
+              <p className="text-base text-gray-500 mt-1">Feb 2023 - Present</p>
+              <p className="text-base mt-2">Activities and societies: Pool, Futsal, Cricket, Badminton</p>
+              <p className="text-base mt-1">Skills: Canva, Technical Support, Computer Literacy, IT Management, Networking, Information Technology, Microsoft Office, Event Management, Event Planning, IT Operations</p>
+            </div>
+            <div className="card bg-white p-6 rounded-xl shadow-md mt-6">
+              <h3 className="text-xl font-bold text-indigo-600">Siddhartha English Boarding Secondary School</h3>
+              <p className="text-lg text-gray-600 mt-1">+2, Computer Science</p>
+              <p className="text-base text-gray-500 mt-1">Aug 2021 - Oct 2022</p>
+              <p className="text-base mt-2">Activities and societies: Volleyball, Football, Table tennis</p>
+              <p className="text-base mt-1">Skills: Computer Literacy</p>
+            </div>
+            <div className="card bg-white p-6 rounded-xl shadow-md mt-6">
+              <h3 className="text-xl font-bold text-indigo-600">Saptakoshi English Boarding Secondary School</h3>
+              <p className="text-lg text-gray-600 mt-1">SEE, Computer Science</p>
+              <p className="text-base text-gray-500 mt-1">Aug 2020</p>
+              <p className="text-base mt-2">Activities and societies: Table tennis, Football, Badminton, Cricket</p>
+              <p className="text-base mt-1">Skills: Computer Literacy</p>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Skills() {
+      return (
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4 fade-in">
+            <h2 className="text-3xl font-bold section-header">Skills</h2>
+            <div className="card bg-white p-6 rounded-xl shadow-md text-center">
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="skill-badge">Customer Service</span>
+                <span className="skill-badge">Phone Etiquette</span>
+                <span className="skill-badge">Resolving Issues</span>
+                <span className="skill-badge">Customer Relations</span>
+                <span className="skill-badge">Skilled Multi-tasker</span>
+                <span className="skill-badge">IT Operations</span>
+                <span className="skill-badge">Technical Support</span>
+                <span className="skill-badge">Computer Literacy</span>
+                <span className="skill-badge">Networking</span>
+                <span className="skill-badge">Problem Solving</span>
+                <span className="skill-badge">Operations Management</span>
+                <span className="skill-badge">Canva</span>
+                <span className="skill-badge">Microsoft Office</span>
+                <span className="skill-badge">Event Management</span>
+                <span className="skill-badge">Event Planning</span>
+                <span className="skill-badge">IT Management</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Certifications() {
+      return (
+        <section className="py-12">
+          <div className="container mx-auto px-4 fade-in">
+            <h2 className="text-3xl font-bold section-header">Certifications</h2>
+            <div className="card bg-white p-6 rounded-xl shadow-md">
+              <ul className="text-base mt-3 list-disc pl-5 space-y-2">
+                <li>Completion Certificate for Technical Support Fundamentals - Google, Issued Dec 2024</li>
+                <li>Introduction to Networking and Storage - IBM, Issued Dec 2024</li>
+                <li>The Bits and Bytes of Computer Networking - Google, Issued Oct 2024</li>
+                <li>Network Support and Security - Cisco, Issued Oct 2023</li>
+                <li>Networking Basics - Cisco, Issued Oct 2023</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Projects() {
+      return (
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4 fade-in">
+            <h2 className="text-3xl font-bold section-header">Projects</h2>
+            <div className="card bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-indigo-600">Energy Harvesting Using Piezo</h3>
+              <p className="text-base text-gray-500 mt-1">Jan 2024 - Present | Associated with Mid-Valley International College - MVIC</p>
+              <p className="text-base mt-2">Skills: Electronics, Renewable Energy</p>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Volunteering() {
+      return (
+        <section className="py-12">
+          <div className="container mx-auto px-4 fade-in">
+            <h2 className="text-3xl font-bold section-header">Volunteering</h2>
+            <div className="card bg-white p-6 rounded-xl shadow-md">
+              <h3 className="text-xl font-bold text-indigo-600">Liaison Officer</h3>
+              <p className="text-lg text-gray-600 mt-1">Brainycube Research Organization</p>
+              <p className="text-base text-gray-500 mt-1">Jan 2023 - Present | 2 yrs 5 mos | Science and Technology</p>
+            </div>
+            <div className="card bg-white p-6 rounded-xl shadow-md mt-6">
+              <h3 className="text-xl font-bold text-indigo-600">Event Organizer</h3>
+              <p className="text-lg text-gray-600 mt-1">Rotract Club of Chandragiri</p>
+              <p className="text-base text-gray-500 mt-1">Mar 2024 - Present | 1 yr 3 mos | Arts and Culture</p>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function Footer() {
+      return (
+        <footer className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8">
+          <div className="container mx-auto text-center fade-in">
+            <p className="text-base font-medium">© 2025 Pramesh Rai. All rights reserved.</p>
+            <p className="text-sm mt-3">
+              <i className="fas fa-envelope mr-2"></i> Contact: prameshrai970@gmail.com| 
+              <i className="fas fa-map-marker-alt ml-2 mr-2"></i> Kathmandu, Bagmati, Nepal
+            </p>
+          </div>
+        </footer>
+      );
+    }
+
+    function App() {
+      return (
+        <div>
+          <Header />
+          <About />
+          <Experience />
+          <Education />
+          <Skills />
+          <Certifications />
+          <Projects />
+          <Volunteering />
+          <Footer />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

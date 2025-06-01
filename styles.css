@@ -1,0 +1,107 @@
+body {
+    font-family: 'Inter', 'Arial', sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  body[data-theme="light"] {
+    background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
+    color: #1f2937; /* Tailwind's gray-800 */
+  }
+  
+  body[data-theme="dark"] {
+    background: linear-gradient(135deg, #1f2937, #374151); /* Tailwind's gray-800 to gray-700 */
+    color: #f3f4f6; /* Tailwind's gray-100, lighter for better readability */
+  }
+  
+  .section-header {
+    border-bottom: 3px solid #10b981; /* Changed to emerald-500 for variety */
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .section-header::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: #10b981; /* Emerald-500 for consistency */
+    bottom: -3px;
+    left: 0;
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+  
+  body[data-theme="light"] .card {
+    background: #ffffff; /* White for light mode */
+  }
+  
+  body[data-theme="dark"] .card {
+    background: #4b5563; /* Tailwind's gray-600, matches your screenshot */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  body[data-theme="light"] .skill-badge {
+    background: #e0e7ff; /* Light indigo for light mode */
+    color: #4b5563; /* Tailwind's gray-600 */
+  }
+  
+  body[data-theme="dark"] .skill-badge {
+    background: #9ca3af; /* Tailwind's gray-400 for better contrast */
+    color: #1f2937; /* Tailwind's gray-800 for readability */
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Adjust background for sections with bg-gray-50 in dark mode */
+  body[data-theme="light"] section.bg-gray-50 {
+    background: #f9fafb; /* Tailwind's gray-50 */
+  }
+  
+  body[data-theme="dark"] section.bg-gray-50 {
+    background: #374151; /* Tailwind's gray-700, aligns with screenshot */
+  }
+  
+  /* Improve readability for secondary text (e.g., dates, descriptions) */
+  body[data-theme="dark"] .text-gray-600 {
+    color: #d1d5db; /* Tailwind's gray-300, matches screenshot */
+  }
+  
+  body[data-theme="dark"] .text-gray-500 {
+    color: #e5e7eb; /* Tailwind's gray-200, lighter for contrast */
+  }
+  
+  /* Specific styles to match your screenshot */
+  body[data-theme="dark"] h3.text-indigo-600 {
+    color: #2585f9; /* Keep purple for titles */
+  }
+  
+  body[data-theme="dark"] p.text-gray-600 {
+    color: #9ca3af; /* Lighter gray for secondary text, matches screenshot */
+  }
+  
+  body[data-theme="dark"] ul li {
+    color: #d1d5db; /* Tailwind's gray-300 for bullet points, matches screenshot */
+  }
